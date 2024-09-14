@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #222;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin: 10px 0;
+            color: #f0f0f0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for cards */
+            grid-gap: 20px;
+            padding: 20px;
+            width: 100vw;
+            height: calc(100vh - 70px); /* Subtract heading height */
+            grid-template-rows: auto 1fr; /* Adjust grid rows */
+        }
+
+        .card {
+            background-color: #333;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px; /* Adjusted height to fit the screen */
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .card img:hover {
+            transform: scale(1.1);
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #f0f0f0;
+        }
+
+        .card p {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .bottom-card {
+            grid-column: 1 / -1; /* Span across all columns */
+            background-color: #333;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            height: 100%; /* Take remaining space */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bottom-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .bottom-card h3 {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+        }
+
+        .bottom-card p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sales Prediction</h1>
+
+    <div class="container">
+        <div class="card">
+            <img src="/Users/aniketsingh/Anik8base/College Academia /HTM 5.0 /button redirection pages /predictions landing page button/static/prediction analysis images/image1.png" alt="Graph 1">
+            <h3>Prediction 1</h3>
+            <p>This is a sample prediction for graph 1.</p>
+        </div>
+        <div class="card">
+            <img src="/Users/aniketsingh/Anik8base/College Academia /HTM 5.0 /button redirection pages /predictions landing page button/static/prediction analysis images/image2.png" alt="Graph 2">
+            <h3>Prediction 2</h3>
+            <p>This is a sample prediction for graph 2.</p>
+        </div>
+        <div class="card">
+            <img src="/Users/aniketsingh/Anik8base/College Academia /HTM 5.0 /button redirection pages /predictions landing page button/static/prediction analysis images/image3.png" alt="Graph 3">
+            <h3>Prediction 3</h3>
+            <p>This is a sample prediction for graph 3.</p>
+        </div>
+        <div class="bottom-card">
+            <h3>Additional Information</h3>
+            <p>This section can be used for additional text or content that complements the predictions shown above.</p>
+        </div>
+    </div>
+</body>
+</html>

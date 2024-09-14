@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today's Sales</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #222;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+    }
+
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: #333;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #444;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #444;
+      color: #f9a825;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #3a3a3a;
+    }
+
+    tr:hover {
+      background-color: #555;
+    }
+
+    .total-row {
+      font-weight: bold;
+      color: #f9a825;
+    }
+
+    /* Responsive table for smaller screens */
+    @media (max-width: 768px) {
+      th, td {
+        font-size: 0.9rem;
+      }
+
+      .container {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Today's Sales Report</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity Sold</th>
+          <th>Total Revenue ($)</th>
+          <th>Sale Percentage (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Product A</td>
+          <td>120</td>
+          <td>3,600</td>
+          <td>25%</td>
+        </tr>
+        <tr>
+          <td>Product B</td>
+          <td>90</td>
+          <td>2,700</td>
+          <td>18%</td>
+        </tr>
+        <tr>
+          <td>Product C</td>
+          <td>150</td>
+          <td>4,500</td>
+          <td>30%</td>
+        </tr>
+        <tr>
+          <td>Product D</td>
+          <td>80</td>
+          <td>2,000</td>
+          <td>12%</td>
+        </tr>
+        <tr>
+          <td>Product E</td>
+          <td>60</td>
+          <td>1,500</td>
+          <td>10%</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td>Total</td>
+          <td>500</td>
+          <td>14,300</td>
+          <td>100%</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- Additional sales summary or analytics could go here -->
+  </div>
+
+</body>
+</html>

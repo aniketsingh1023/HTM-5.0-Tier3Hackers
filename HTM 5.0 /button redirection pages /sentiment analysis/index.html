@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis - Data Analytics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #222;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            text-align: center;
+            color: #f9a825; /* Bright yellow color for emphasis */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for larger cards */
+            grid-gap: 20px;
+            padding: 20px;
+            width: 100vw;
+            height: calc(100vh - 90px); /* Subtract heading height */
+        }
+
+        .card {
+            background-color: #333;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        .chart {
+            width: 100%;
+            height: 250px; /* Increased height for better visibility */
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Page heading -->
+    <h1>Sentiment Analysis</h1>
+
+    <!-- Container holding the images -->
+    <div class="container">
+        <!-- Word Cloud -->
+        <div class="card">
+            <img class="chart" src="statics/sentiment analysis images/image1.png" alt="Word Cloud">
+        </div>
+
+        <!-- Bar Graph -->
+        <div class="card">
+            <img class="chart" src="statics/sentiment analysis images/image2.png" alt="Bar Graph">
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="card">
+            <img class="chart" src="statics/sentiment analysis images/image3.png" alt="Pie Chart">
+        </div>
+
+        <!-- Scatter Plot -->
+        <div class="card">
+            <img class="chart" src="statics/sentiment analysis images/image4.png" alt="Scatter Plot">
+        </div>
+
+        <!-- Another Bar Graph -->
+        <div class="card">
+            <img class="chart" src="statics/sentiment analysis images/image5.png" alt="Bar Graph">
+        </div>
+
+        <!-- Another Pie Chart -->
+        <div class="card">
+            <img class="chart" src="statics/sentiment analysis images/image6.png" alt="Pie Chart">
+        </div>
+    </div>
+
+</body>
+</html>

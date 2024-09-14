@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 40px;
+    color: #ffd700; /* Yellow for headings */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color change on hover */
+}
+
+/* Button Styling */
+.details {
+    background-color: #3498db; /* Blue */
+    color: #fff; 
+}
+
+.details:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.update {
+    background-color: #ffd700; /* Yellow */
+    color: #222; /* Dark text for contrast */
+}
+
+.update:hover {
+    background-color: #f4d03f; /* Lighter yellow on hover */
+}
+
+.delete {
+    background-color: #c0392b; /* Red */
+    color: #fff; 
+}
+
+.delete:hover {
+    background-color: #9e3a2c; /* Darker red on hover */
+}

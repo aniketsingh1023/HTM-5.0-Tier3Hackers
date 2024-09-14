@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <style>
+        body {
+            background-color: #000; /* Updated to true black for a stronger contrast */
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Product Form Styling */
+        .product-form {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .product-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .product-form button {
+            padding: 15px;
+            background-color: #00C853;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .product-form button:hover {
+            background-color: #00E676;
+        }
+
+        /* Product Card Styling */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #ddd;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .product-card h2 {
+            font-size: 1.7rem;
+            color: #fff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        .product-card .price {
+            font-size: 1.2rem;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .details-button {
+            background-color: #2196F3;
+            color: #fff;
+        }
+
+        .details-button:hover {
+            background-color: #42A5F5;
+        }
+
+        .update-button {
+            background-color: #FFC107;
+            color: #000;
+        }
+
+        .update-button:hover {
+            background-color: #FFD54F;
+        }
+
+        .delete-button {
+            background-color: #F44336;
+            color: #fff;
+        }
+
+        .delete-button:hover {
+            background-color: #E57373;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Content Section -->
+        <div class="content">
+            <!-- Product Form -->
+            <h1>Add New Product</h1>
+            <form class="product-form">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+                <label for="productDescription">Product Description:</label>
+                <input type="text" id="productDescription" name="productDescription" required>
+                <button type="submit">Add Product</button>
+            </form>
+
+            <!-- Product List -->
+            <h2>Available Products</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <h2>OMEGA SPEEDMASTER</h2>
+                    <p>This luxury watch is known for its precision and elegance.</p>
+                    <div class="price">$5,500</div>
+                    <button class="details-button">Details</button>
+                    <button class="update-button">Update</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+                <div class="product-card">
+                    <h2>ROLEX SUBMARINER</h2>
+                    <p>Known for its impeccable craftsmanship, this watch is a diver's dream.</p>
+                    <div class="price">$12,000</div>
+                    <button class="details-button">Details</button>
+                    <button class="update-button">Update</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+                <div class="product-card">
+                    <h2>TAG HEUER CARRERA</h2>
+                    <p>A modern watch for those who appreciate speed and precision.</p>
+                    <div class="price">$3,500</div>
+                    <button class="details-button">Details</button>
+                    <button class="update-button">Update</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
