@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day Sales Report</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>7-Day Sales Report</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Total Sales ($)</th>
+                    <th>Units Sold</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Day 1</td>
+                    <td>14,300</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Day 2</td>
+                    <td>12,500</td>
+                    <td>470</td>
+                </tr>
+                <tr>
+                    <td>Day 3</td>
+                    <td>13,200</td>
+                    <td>490</td>
+                </tr>
+                <tr>
+                    <td>Day 4</td>
+                    <td>15,500</td>
+                    <td>520</td>
+                </tr>
+                <tr>
+                    <td>Day 5</td>
+                    <td>16,800</td>
+                    <td>550</td>
+                </tr>
+                <tr>
+                    <td>Day 6</td>
+                    <td>14,200</td>
+                    <td>510</td>
+                </tr>
+                <tr>
+                    <td>Day 7</td>
+                    <td>12,800</td>
+                    <td>480</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>99,300</td>
+                    <td>3,520</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- Charts in one line -->
+        <div class="charts-container">
+            <div class="chart-box">
+                <canvas id="salesChart"></canvas>
+            </div>
+            <div class="chart-box pie-box">
+                <canvas id="salesPieChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Sales data for 7 days
+const labels = ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'];
+
+const salesData = [14300, 12500, 13200, 15500, 16800, 14200, 12800];
+
+// Line Chart for Sales Over Time
+const ctxLine = document.getElementById('salesChart').getContext('2d');
+const salesChart = new Chart(ctxLine, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Total Sales ($)',
+            data: salesData,
+            borderColor: '#FF8C00', // Orange line
+            backgroundColor: 'rgba(255, 215, 0, 0.5)', // Golden transparent fill
+            fill: true,
+            tension: 0.1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            x: {
+                beginAtZero: true,
+                grid: {
+                    color: '#FFD700' // Golden grid lines
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: '#FFD700' // Golden grid lines
+                }
+            }
+        }
+    }
+});
+
+// Pie Chart for Sales Proportions
+const ctxPie = document.getElementById('salesPieChart').getContext('2d');
+const salesPieChart = new Chart(ctxPie, {
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Sales Proportion',
+            data: salesData,
+            backgroundColor: [
+                '#FF8C00', // Orange
+                '#FFD700', // Golden
+                '#FF4500', // Red-Orange
+                '#FFA500', // Bright Orange
+                '#DAA520', // Darker Goldenrod
+                '#FF6347', // Tomato Red
+                '#FFA07A'  // Light Salmon
+            ],
+            borderColor: '#333',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+
+    </script>
+</body>
+
+</html>
