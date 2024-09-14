@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Chatbot with History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Hide horizontal scroll */
+        }
+
+        /* Circular button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #f5a623; /* Accent color */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1e1e1e;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            z-index: 1001;
+        }
+
+        .chat-button:hover {
+            background-color: #e59400;
+        }
+
+        .chat-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Chat container (popup style) - hidden initially */
+        .chat-container {
+            position: fixed;
+            bottom: 90px;
+            right: 50px;
+            width: 300px; /* Smaller card size */
+            height: 400px;
+            background-color: #2c2c2c;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none; /* Initially hidden */
+            opacity: 0;
+            transform: scale(0); /* Start small (popup animation) */
+            transition: transform 0.4s ease, opacity 0.4s ease; /* Smooth grow effect */
+        }
+
+        /* Chat container when it's opened */
+        .chat-container.open {
+            display: block;
+            opacity: 1;
+            transform: scale(1); /* Grows to full size */
+        }
+
+        h1 {
+            text-align: center;
+            color: #f5a623;
+            margin-top: 10px;
+        }
+
+        .chat-history {
+            border: 1px solid #444;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #333;
+            max-height: 260px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .chat-history .message {
+            margin-bottom: 10px;
+        }
+
+        .chat-history .message .role {
+            font-weight: bold;
+            color: #f5a623; /* Accent color for role */
+        }
+
+        .chat-history .message .text {
+            margin-left: 10px;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #444;
+            color: #e0e0e0;
+            font-size: 16px;
+        }
+
+        button {
+            width: 15%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f5a623;
+            color: #1e1e1e;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e59400;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        a {
+            color: #f5a623;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Circular Button -->
+    <div class="chat-button" onclick="toggleChat()">
+        💬
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <h1>Gemini Chatbot</h1>
+
+        <div class="chat-history">
+            <!-- Chat history would be populated here dynamically -->
+            {% for message in chat_history %}
+                <div class="message">
+                    <span class="role">{{ message.role }}:</span>
+                    <span class="text">{{ message.text }}</span>
+                </div>
+            {% endfor %}
+        </div>
+
+        <form method="POST" action="/">
+            <div class="input-container">
+                <input type="text" name="input_text" placeholder="Ask your question" required>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <a href="{{ url_for('clear_history') }}">Clear chat history</a>
+    </div>
+
+    <script>
+        // Function to toggle the chat container visibility
+        function toggleChat() {
+            var chatContainer = document.getElementById("chatContainer");
+            if (chatContainer.classList.contains("open")) {
+                chatContainer.classList.remove("open");
+                setTimeout(() => {
+                    chatContainer.style.display = "none";
+                }, 400); // Match transition duration
+            } else {
+                chatContainer.style.display = "block";
+                setTimeout(() => {
+                    chatContainer.classList.add("open");
+                }, 10); // Allow display to trigger first
+            }
+        }
+    </script>
+
+</body>
+</html>
