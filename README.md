@@ -133,4 +133,41 @@ Franchise Navigator is a robust platform designed to manage and scale small and 
 
 ## API Endpoints
 
-- **GET /api/inven
+- **GET /api/inventory**: Retrieve current inventory levels.
+- **POST /api/sales**: Record a new sale and update inventory.
+- **GET /api/revenue**: Get revenue reports and financial summaries.
+- **GET /api/employees**: Manage employee data and roles.
+
+## Database Schema
+
+- **Users**: Stores user credentials and roles.
+  - `username`, `password`, `role`
+- **Products**: Contains product details and inventory levels.
+  - `productID`, `name`, `price`, `quantity`
+- **Sales**: Records individual sales transactions.
+  - `saleID`, `productID`, `quantity`, `totalAmount`
+- **Employees**: Manages employee information and performance metrics.
+  - `employeeID`, `name`, `role`, `performance`
+
+## Machine Learning Models
+
+- **Prediction Analysis Model**:
+  - **Libraries**: Pandas, NumPy, Matplotlib, Seaborn, Plotly
+  - **Purpose**: Analyze historical sales data to predict future sales trends.
+
+- **Sentiment Analysis**:
+  - **Libraries**: NLTK, Pandas, NumPy, Matplotlib, Seaborn, Plotly
+  - **Model**: XGBoost
+  - **Purpose**: Analyze customer feedback to gauge sentiment and adjust strategies accordingly.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Create a new Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
